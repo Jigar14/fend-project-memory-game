@@ -107,3 +107,8 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+.center-align{
+    align-content: center; 
+    align-items: center;
+}
