@@ -2,6 +2,36 @@
  * Create a list that holds all of your cards
  */
 
+class Card {
+    constructor(card, id) {
+        this.id = id;
+        this.image = card.image;
+        this.name = card.name;
+        this.htmlCode = 
+        `<section class="container card">
+            <div id="$this.id">
+                <figure class="front">1</figure>
+                <figure class="back">2</figure>
+            </div>
+        </section>`;
+    }
+}
+
+
+function prepareDeck(){
+
+    const Deck = [];
+
+    cards.forEach(function(c, index) {
+        var card = new Card(c, index);
+        var copy = new Card(c, index + cards.length);
+        
+        Deck.push(card);
+        Deck.push(copy);
+    })
+    console.log(Deck);
+    return Deck; 
+}
 
 /*
  * Display the cards on the page
@@ -17,7 +47,7 @@ function shuffle(array) {
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-        temporaryValue = array[currentIndex];
+        const temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
     }
@@ -37,14 +67,37 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
- function resetGame(){
+ function initGame(){
      //call this function when the reset button is called
+    var deck = prepareDeck();
+    var shuffeledCards = shuffle(deck);
+    console.log(shuffeledCards);
+    
+    return shuffeledCards;
  }
 
  function incrementMoveCount(){
      //function to increment the move count and update the ratings after each count.
  }
 
- function updateRatings(moveCount){
-     //function to update the ratings based upon the move count.
+ function returnRatings(moveCount){
+     //function to return the rating (star count) based on move(s) count
+
+    return 0;
  }
+
+
+function injectCardsOnTheBoard(cards){    
+    var deck = $('#cards');
+
+    cards.forEach(function(c){
+        deck.html(c.htmlCode);
+        console.log(c.htmlCode);
+    })
+}
+
+var shuffeledCards = initGame();
+
+$(document).ready(function(){
+  injectCardsOnTheBoard(shuffeledCards);  
+})

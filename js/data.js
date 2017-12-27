@@ -1,30 +1,27 @@
 const cards = [{
     name: "Selena",
-    image: "img/selena.jpg",
+    image: "../img/selena.jpg",
 },{
     name: "Dhoni",
-    image: "img/dhoni.jpg",
+    image: "../img/dhoni.jpg",
 },{
     name: "Obama",
-    image: "img/obama.jpg",
+    image: "../img/obama.jpg",
 },{
     name: "Drake",
-    image: "img/drake.jpg",
+    image: "../img/drake.jpg",
 },{
     name: "Shreya",
-    image: "img/shreya.jpg",
+    image: "../img/shreya.jpg",
 },{
     name: "Katy",
-    image: "img/katy.jpg",
+    image: "../img/katy.jpg",
 },{
     name: "Rihana",
-    image: "img/rihanna.jpg",
-},{
-    name: "Demi",
-    image: "img/demi.jpg",
+    image: "../img/rihanna.jpg",
 },{
     name: "Sundar",
-    image: "img/sundar.jpg"
+    image: "../img/sundar.jpg"
 }
 ]
 
